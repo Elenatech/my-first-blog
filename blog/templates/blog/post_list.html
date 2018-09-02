@@ -11,18 +11,13 @@
       <p>Hallo zusammen und herzlich Willkommen auf meinem Blog " Elenas bunte Mischung"!</p>
     </div>
 
+    {% for post in posts %}
     <div>
-      <p>published: 02.09.2018, 14:46</p>
-      <h2><a href="">Ich stelle mich vor</a></h2>
-      <p>Text in Bearbeitung.</p>
-    </div>
-
-    <div>
-      <p>published: 02.09.2018, 14:57</p>
-      <h2><a href="">Frage der Woche: Was bedeutet Glück?</a></h2>
-      <p>Text in Bearbeitung.</p>
-      <p>published: 02.09.2018, 14:56</p>
-    </div>
+      <p>published: {{ post.published_date }}</p>
+      <h1><a href="">{{ post.title }}</a></h1>
+      <p>{{ post.text|linebreaksbr }}</p>
+  </div>
+    {% endfor %}
 
   </body>
 </html>
